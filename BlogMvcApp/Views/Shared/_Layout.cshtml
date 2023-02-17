@@ -21,6 +21,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/Category/Index">Kategori Listesi</a>
+                    </li>
+                    <li>
+                        <a href="/Blog/List">Bloglar</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -28,9 +34,22 @@
 
     <div class="container body-content">
         <div class="row">
-            <div class="col-md-12">
-                @RenderBody()
-            </div>
+            @if (IsSectionDefined("SagKolon"))
+            {
+                <div class="col-md-8">
+                    @RenderBody()
+                </div>
+                <div class="col-md-4">
+                    @RenderSection("SagKolon")
+                </div>
+            }
+            else
+            {
+                <div class="col-md-12">
+                    @RenderBody()
+                </div>
+            }
+
         </div>
 
         <hr />
