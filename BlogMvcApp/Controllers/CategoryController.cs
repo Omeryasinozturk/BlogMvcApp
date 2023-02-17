@@ -52,8 +52,8 @@ namespace BlogMvcApp.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,KategoriAdi")] Category category)
+        [ValidateAntiForgeryToken] //Formun get i ile oluşturulan token in gelen token ile kontrol edilmesini sağlıyor güvenlik amacıyla..
+        public ActionResult Create([Bind(Include = "KategoriAdi")] Category category)
         {
             if (ModelState.IsValid)
             {
