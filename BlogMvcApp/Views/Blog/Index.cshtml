@@ -11,6 +11,18 @@
     @Html.ActionLink("Yeni Blog Ekle", "Create",null,new {@class="btn btn-primary"})
 </p>
 <hr />  
+
+@if (TempData["Blog"]!=null)  //sayfaya edit yapıldıktan sonra geldiyse
+{
+    var blog = (BlogMvcApp.Models.Blog) TempData["Blog"];
+<div class="alert alert-success" role="alert">
+    <strong> <span class="glyphicon glyphicon-ok"></span>
+        @blog.Baslik
+    </strong>  Güncellendi.
+</div>
+}
+
+
 <table class="table table-bordered table-hover table-striped" >
     <tr>
         <th>

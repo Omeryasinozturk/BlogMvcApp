@@ -91,6 +91,9 @@ namespace BlogMvcApp.Controllers
             {
                 db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
+
+
+                TempData["Kategori"] = category;
                 return RedirectToAction("Index");
             }
             return View(category);

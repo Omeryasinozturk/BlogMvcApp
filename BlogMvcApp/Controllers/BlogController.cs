@@ -101,6 +101,10 @@ namespace BlogMvcApp.Controllers
                     entity.CategoryId=blog.CategoryId;
 
                     db.SaveChanges();
+                    
+                    TempData["Blog"] = entity;
+                    //Tempdata içerisinde bilgi taşıyacağız.
+                    //Viewbag kullanmamamızın sebebi redirectToAction ile kullandığımız zaman viewbag sıfırlanıyor.
                     return RedirectToAction("Index");
                 }
 
